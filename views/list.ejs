@@ -6,8 +6,30 @@
 </head>
 <body>
    
-    <!-- <%=  %> is a ejs marker that have a variable that will be updated with its current value -->
-    <h1>It's a <%=kindOfDay%>!</h1>    
+    <h1> <%= kindOfDay %> </h1> 
+
+    <ul>
+        <% for (var i = 0; i < newListItems.length ; i++) { %>
+            <li> <%= newListItems[i] %> </li>
+        <% } %>
+    </ul>
    
+    <form class="" action="/" method="Post">
+        <h2>Add new task</h2>
+        <input type="text" name="newItem" placeholder="Enter Item">
+        <button type="submit" name="button">Add</button>
+    </form>
+
 </body>
 </html>
+
+
+<!-- Long way of doing same thing as the h1 tag above -->
+    <!-- <%  %>, scriplet ejs tag allows for the control of flow, needs to be added to any part of the code that is not HTML, work on a  line by line basis
+    <% if (kindOfDay === "Saturday" || kindOfDay === "Sunday") { %>
+        <%=  %> is a ejs marker that have a variable that will be updated with its current value 
+         <h1 style="color: purple"><%= kindOfDay %> ToDo List</h1>    
+     <%  } else { %>
+         <h1 style="color: blue"><%= kindOfDay %> ToDo List</h1>
+     <% } %> -->
+ 
